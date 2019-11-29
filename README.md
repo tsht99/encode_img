@@ -1,1 +1,6 @@
 # encode_img
+
+プログラミング言語：GoogleAppsScript
+
+GoogleDrive上の画像をbase64でエンコードする。
+スプレッドシートはGoogleDriveの容量を取らないので実質無制限にアップロードすることが可能。
