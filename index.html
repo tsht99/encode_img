@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <script>
+        function rewrite(res){
+            console.log(res);
+            const parser = new DOMParser();
+            var doc = parser.parseFromString(res, "text/html");
+            doc = doc.getElementsByTagName("div")[0];
+            document.body.removeChild(document.getElementsByTagName('div')[0]);
+            document.body.appendChild(doc);
+        }
+        function list_page(){
+            google.script.run.withSuccessHandler(rewrite).list_page();
+        }
+        function browse_page(index){
+            google.script.run.withSuccessHandler(rewrite).browse_page(index);
+        }
+        google.script.run.withSuccessHandler(rewrite).list_page();
+    </script>
+    <div></div>
+</body>
+</html>
